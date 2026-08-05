@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Pro</title>
     <link rel="stylesheet" href="index.css">
-    <!-- Fuente moderna desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Calculadora</h1>
     <div class="calculator-container">
+        <!-- Panel de Historial Lateral / Superior -->
+        <div class="history-panel" id="history-panel">
+            <div class="history-title">
+                <span>Historial</span>
+                <button id="clear-history" class="btn-clear-history">Limpiar</button>
+            </div>
+            <ul id="history-list" class="history-list"></ul>
+        </div>
+
         <!-- Pantalla de la Calculadora -->
         <div class="display-container">
             <div id="previous-op" class="previous-operand"></div>
