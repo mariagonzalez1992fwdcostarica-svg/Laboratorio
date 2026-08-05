@@ -1,0 +1,124 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --calc-bg: rgba(30, 41, 59, 0.7);
+    --display-bg: #0f172a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --btn-bg: #334155;
+    --btn-hover: #475569;
+    --btn-operator: #3b82f6;
+    --btn-operator-hover: #2563eb;
+    --btn-action: #64748b;
+    --btn-equals: #10b981;
+    --btn-equals-hover: #059669;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-gradient);
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 360px;
+    background: var(--calc-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+/* Display */
+.display-container {
+    background-color: var(--display-bg);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.previous-operand {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    min-height: 1.2rem;
+}
+
+.current-operand {
+    color: var(--text-primary);
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+/* Grid de Botones */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 16px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 14px;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--text-primary);
+    transition: all 0.15s ease-in-out;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-operator {
+    background-color: var(--btn-operator);
+}
+
+.btn-operator:hover {
+    background-color: var(--btn-operator-hover);
+}
+
+.btn-action {
+    background-color: var(--btn-action);
+}
+
+.btn-equals {
+    background-color: var(--btn-equals);
+    grid-column: span 1;
+}
+
+.btn-equals:hover {
+    background-color: var(--btn-equals-hover);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
