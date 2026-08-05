@@ -122,3 +122,18 @@ body {
 .btn-zero {
     grid-column: span 2;
 }
+/* Feedback visual al presionar teclas */
+.btn-pressed {
+    transform: scale(0.95) translateY(2px) !important;
+    filter: brightness(1.2);
+}
+
+/* Scrollbar personalizada para el historial */
+.history-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-panel::-webkit-scrollbar-thumb {
+    background: var(--btn-hover);
+    border-radius: 4px;
+}

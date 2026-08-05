@@ -116,3 +116,22 @@ document.querySelector('[data-action="delete"]').addEventListener('click', () =>
     calculator.delete();
     calculator.updateDisplay();
 });
+// Activar efecto de presionado visual mediante teclado
+document.addEventListener('keydown', (e) => {
+    let keySelector = '';
+    
+    if (e.key >= '0' && e.key <= '9') keySelector = `[data-number="${e.key}"]`;
+    if (e.key === '.') keySelector = `[data-number="."]`;
+    if (['+', '-', '*', '/'].includes(e.key)) keySelector = `[data-operator="${e.key}"]`;
+    if (e.key === 'Enter' || e.key === '=') keySelector = `[data-action="calculate"]`;
+    if (e.key === 'Backspace') keySelector = `[data-action="delete"]`;
+    if (e.key === 'Escape') keySelector = `[data-action="clear"]`;
+
+    if (keySelector) {
+        const button = document.querySelector(keySelector);
+        if (button) {
+            button.classList.add('btn-pressed');
+            setTimeout(() => button.classList.remove('btn-pressed'), 150);
+        }
+    }
+});
